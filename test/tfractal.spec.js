@@ -5,10 +5,4 @@ import Tfractal from '../src/tfractal';
 
 describe('Tfractal', () => {
   it('should exist', () => { expect(Tfractal).to.be.ok; });
-
-  it('should render', () => {
-    const wrapper = shallow(<Tfractal />);
-
-    expect(wrapper).to.be.ok;
-  });
 });
