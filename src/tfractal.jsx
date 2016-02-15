@@ -2,8 +2,8 @@ import React from 'react';
 import * as _ from 'lodash';
 
 function renderTfractal({ cellSize, colorMap, layers, background, opacity }) {
-  const width = colorMap.length * Math.pow(2, layers - 1);
-  const height = colorMap.length * Math.pow(2, layers - 1);
+  const width = colorMap.length * cellSize * Math.pow(2, layers - 1);
+  const height = colorMap.length * cellSize * Math.pow(2, layers - 1);
 
   if (typeof document === 'undefined') {
     return null;
