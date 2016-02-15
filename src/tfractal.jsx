@@ -22,7 +22,7 @@ function renderTfractal({ cellSize, colorMap, layers, background, opacity }) {
 
   for (let layer = 0; layer < layers; layer++) {
     const size = cellSize * Math.pow(2, layer);
-    const mapSize = cellSize * colorMap.length;
+    const mapSize = size * colorMap.length;
     for (let xCoord = 0; xCoord < width; xCoord += mapSize) {
       for (let yCoord = 0; yCoord < height; yCoord += mapSize) {
         _.forEach(colorMap, (row, indexInColumn) =>
