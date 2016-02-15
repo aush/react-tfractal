@@ -16,7 +16,7 @@ function renderTfractal({ cellSize, colorMap, layers, background, opacity }) {
     return null;
   }
 
-  ctx.fillStyle = background.hexString();
+  ctx.fillStyle = background;
   ctx.fillRect(0, 0, width, height);
   ctx.globalAlpha = opacity;
 
@@ -27,7 +27,7 @@ function renderTfractal({ cellSize, colorMap, layers, background, opacity }) {
       for (let yCoord = 0; yCoord < height; yCoord += mapSize) {
         _.forEach(colorMap, (row, indexInColumn) =>
           _.forEach(row, (color, indexInRow) => {
-            ctx.fillStyle = color.hexString();
+            ctx.fillStyle = color;
             ctx.fillRect(size * indexInRow + xCoord, size * indexInColumn + yCoord, size, size);
           })
         );
