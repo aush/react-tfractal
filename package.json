@@ -76,7 +76,9 @@
   "peerDependencies": {
     "react": ">=0.14.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "lodash.foreach": "^4.1.0"
+  },
   "engines": {
     "node": ">=4.1.0"
   }

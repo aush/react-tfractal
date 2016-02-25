@@ -1,5 +1,5 @@
 import React from 'react';
-import * as _ from 'lodash';
+import forEach from 'lodash.foreach';
 
 function renderTfractal({ cellSize, colorMap, layers, background, opacity }) {
   const width = colorMap.length * cellSize * 2 ** (layers - 1);
@@ -26,8 +26,8 @@ function renderTfractal({ cellSize, colorMap, layers, background, opacity }) {
     const mapSizeY = size * colorMap[0].length;
     for (let xCoord = 0; xCoord < width; xCoord += mapSizeX) {
       for (let yCoord = 0; yCoord < height; yCoord += mapSizeY) {
-        _.forEach(colorMap, (column, indexInRow) =>
-          _.forEach(column, (color, indexInColumn) => {
+        forEach(colorMap, (column, indexInRow) =>
+          forEach(column, (color, indexInColumn) => {
             ctx.fillStyle = color;
             ctx.fillRect(size * indexInRow + xCoord, size * indexInColumn + yCoord, size, size);
           })
