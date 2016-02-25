@@ -2,8 +2,8 @@ import React from 'react';
 import * as _ from 'lodash';
 
 function renderTfractal({ cellSize, colorMap, layers, background, opacity }) {
-  const width = colorMap.length * cellSize * Math.pow(2, layers - 1);
-  const height = colorMap[0].length * cellSize * Math.pow(2, layers - 1);
+  const width = colorMap.length * cellSize * 2 ** (layers - 1);
+  const height = colorMap[0].length * cellSize * 2 ** (layers - 1);
 
   if (typeof document === 'undefined') {
     return null;
@@ -21,7 +21,7 @@ function renderTfractal({ cellSize, colorMap, layers, background, opacity }) {
   ctx.globalAlpha = opacity;
 
   for (let layer = 0; layer < layers; layer++) {
-    const size = cellSize * Math.pow(2, layer);
+    const size = cellSize * 2 ** layer;
     const mapSizeX = size * colorMap.length;
     const mapSizeY = size * colorMap[0].length;
     for (let xCoord = 0; xCoord < width; xCoord += mapSizeX) {
@@ -39,16 +39,13 @@ function renderTfractal({ cellSize, colorMap, layers, background, opacity }) {
   return canvas.toDataURL();
 }
 
-export default ({ cellSize, colorMap, layers, background, opacity, style, children, ...rest }) => {
-  return (
-    <div
-      style={{
-        background: `url(${renderTfractal({ cellSize, colorMap, layers, background, opacity })}) center left`,
-        ...style,
-      }}
-      {...rest}
-    >
-      {children}
-    </div>
-  );
-};
+export default ({ cellSize, colorMap, layers, background, opacity, style, children, ...rest }) =>
+  <div
+    style={{
+      background: `url(${renderTfractal({ cellSize, colorMap, layers, background, opacity })}) center left`,
+      ...style,
+    }}
+    {...rest}
+  >
+    {children}
+  </div>;

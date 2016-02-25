@@ -1,7 +1,7 @@
 [![npm version](https://img.shields.io/npm/v/react-tfractal.svg?style=flat-square)](https://www.npmjs.com/package/react-tfractal) [![Build Status](https://img.shields.io/travis/aush/react-tfractal.svg?style=flat-square)](https://travis-ci.org/aush/react-tfractal) [![Dependency Status](https://img.shields.io/david/aush/react-tfractal.svg?style=flat-square)](https://david-dm.org/aush/react-tfractal) [![devDependency Status](https://img.shields.io/david/dev/aush/react-tfractal.svg?style=flat-square)](https://david-dm.org/aush/react-tfractal#info=devDependencies) [![Coverage Status](https://img.shields.io/coveralls/aush/react-tfractal.svg?style=flat-square)](https://coveralls.io/github/aush/react-tfractal?branch=master) [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/aush/react-tfractal/master/LICENSE)
 
 # React T-Fractal
-React component for displaying t-fractals
+React component for displaying t-fractals. The idea is borrowed from [T-square fractal (wikipedia)](https://en.wikipedia.org/wiki/T-square_(fractal)) and [this article (Russian)](https://habrahabr.ru/post/145560).
 ###Install
 `npm install --save react-tfractal`
 
@@ -45,7 +45,7 @@ The component depends on React ^0.14 (a introduction of stateless components), s
 <script src="https://npmcdn.com/react-dom@^0.14/dist/react-dom.min.js"></script>
 <script src="https://npmcdn.com/react-tfractal"></script>
 ````
-###API
-Check [tests](/test/tfractal.spec.js).
 ###Codepen example
 http://codepen.io/aush/pen/QyojOb
+###Demo app
+https://tfractal.herokuapp.com
